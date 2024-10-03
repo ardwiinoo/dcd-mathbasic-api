@@ -23,5 +23,14 @@ describe('A FigureCalculator', () => {
             expect(() => figureCalculator.calculateRectanglePerimeter(1)).toThrow()
             expect(() => figureCalculator.calculateRectanglePerimeter(1, 2, 3)).toThrow()
         })
+
+        it('should throw error when given with non-number parameters', () => {
+            const figureCalculator = new FigureCalculator({})
+            
+            expect(() => figureCalculator.calculateRectanglePerimeter(true, {})).toThrow()
+            expect(() => figureCalculator.calculateRectanglePerimeter(null, '2')).toThrow()
+            expect(() => figureCalculator.calculateRectanglePerimeter([], {})).toThrow()
+        })
     })
+
 })

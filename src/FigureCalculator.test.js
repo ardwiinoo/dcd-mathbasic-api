@@ -14,4 +14,14 @@ describe('A FigureCalculator', () => {
         expect(figureCalculator.calculateTrianglePerimeter).toBeInstanceOf(Function)
         expect(figureCalculator.calculateTriangleArea).toBeInstanceOf(Function)
     })
+
+    describe('A calculateRectanglePerimeter function', () => {
+        it('should throw error when not given 2 parameters', () => {
+            const figureCalculator = new FigureCalculator({})
+
+            expect(() => figureCalculator.calculateRectanglePerimeter()).toThrow()
+            expect(() => figureCalculator.calculateRectanglePerimeter(1)).toThrow()
+            expect(() => figureCalculator.calculateRectanglePerimeter(1, 2, 3)).toThrow()
+        })
+    })
 })
